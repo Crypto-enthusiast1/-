@@ -325,3 +325,44 @@ input[type=number] {
    border: none;
    background-color: #FFF
 }
+
+.slick-dots {
+   display: flex !important;
+   justify-content: center;
+   margin-top: 30px;
+   padding: 0;
+}
+
+.slick-dots button {
+   font-size: 0;
+   border: none;
+   background-color: #fff;
+   margin: 0;
+   text-decoration: none;
+   padding: 0;
+}
+
+.slick-dots li {
+   list-style: none;
+   line-height: 0;
+   margin: 0 15px;
+   cursor: pointer;
+   color: black;
+}
+
+.slick-dots li::before {
+   content: '•';
+   position: relative;
+   display: inline-block;
+   width: 1em;
+   text-align: center;
+   margin-left: -1em;
+   vertical-align: middle;
+   right: -11px;
+}
+
+li.slick-active::before {
+   font-size: 35px;
+   left: 7px;
+   bottom: 1px;
+}

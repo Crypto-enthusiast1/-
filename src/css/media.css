@@ -3,6 +3,18 @@
       max-width: 870px;
    }
 
+   .carousel__inner {
+      position: relative;
+      width: 750px;
+      margin: 0 auto;
+   }
+
+   .carousel__inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+
 }
 
 @media(max-width:767px) {
@@ -56,6 +68,10 @@
 
    .consultation__subheader {
       font-size: 18px;
+   }
+
+   .carousel__inner {
+      width: 555px;
    }
 }
 
@@ -168,5 +184,14 @@
 
    .form-consultation {
       margin: 36px auto 0px;
+   }
+
+   .carousel__inner {
+      width: 300px;
+   }
+
+   li.slick-active::before {
+      font-size: 30px;
+      left: 15px;
    }
 }

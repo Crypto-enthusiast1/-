@@ -7,8 +7,9 @@ $(document).ready(function () {
             breakpoint: 992,
             settings: {
                arrows: false,
-               dots: true
-            }
+               dots: true,
+            },
+            
          },
       ]
    });
