@@ -366,3 +366,131 @@ li.slick-active::before {
    left: 7px;
    bottom: 1px;
 }
+
+.catalog {
+   margin-top: 80px;
+}
+
+.title {
+   text-align: center;
+   font-size: 30px;
+   font-style: normal;
+   font-weight: 500;
+   text-transform: uppercase;
+}
+
+.catalog__buttons {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding-left: 0;
+   margin-bottom: 60px;
+
+}
+
+.catalog__btn {
+   width: 220px;
+   height: 50px;
+   margin: 0 5px;
+   border: #D0D0D0;
+   border-style: solid;
+   list-style-type: none;
+   color: #6B6B6B;
+   text-align: center;
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 48px;
+   text-transform: uppercase;
+   transform: skewX(-35deg);
+}
+
+.catalog__btn:hover {
+   box-shadow: 3px 3px 20px #C70101;
+   border: none;
+}
+
+.catalog__btn div {
+   transform: skewX(35deg);
+}
+
+.active-btn {
+   background-color: #C70101;
+   color: #fff;
+   border: none;
+}
+
+.catalog__item {
+   margin: 10px 9px;
+   width: 300px;
+   min-height: 440px;
+   border: #E8E8E8;
+   border-style: solid;
+   padding: 20px 20px;
+}
+
+.catalog__item img {
+   display: block;
+   margin: 0 auto;
+   max-width: 100%;
+}
+
+.subheader__item {
+   color: #0D0D0D;
+   margin-top: 15px;
+   text-align: center;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 700;
+}
+
+.descr__item {
+   color: #0D0D0D;
+   margin-top: 15px;
+   text-align: center;
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 400;
+}
+
+.catalog__item a {
+   display: block;
+   margin: 10px auto 0;
+   color: #C70101;
+   text-align: center;
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 500;
+   text-decoration-line: underline;
+}
+
+.catalog__item hr {
+   margin: 17px auto;
+}
+
+.item__footer {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.item__old-price {
+   color: #555;
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 300;
+   text-decoration: line-through;
+}
+
+.item__new-price {
+   color: #050505;
+   font-size: 20px;
+   font-style: normal;
+   font-weight: 700;
+}
+
+.item__buy {
+   width: 135px;
+   height: 44px;
+   color: #fff
+}
