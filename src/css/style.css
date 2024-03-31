@@ -392,8 +392,7 @@ li.slick-active::before {
    width: 220px;
    height: 50px;
    margin: 0 5px;
-   border: #D0D0D0;
-   border-style: solid;
+   border: 2px solid #D0D0D0;
    list-style-type: none;
    color: #6B6B6B;
    text-align: center;
@@ -402,16 +401,17 @@ li.slick-active::before {
    font-weight: 400;
    line-height: 48px;
    text-transform: uppercase;
-   transform: skewX(-35deg);
+   transform: skewX(-25deg);
 }
 
 .catalog__btn:hover {
    box-shadow: 3px 3px 20px #C70101;
    border: none;
+   cursor: pointer;
 }
 
 .catalog__btn div {
-   transform: skewX(35deg);
+   transform: skewX(25deg);
 }
 
 .active-btn {
@@ -424,15 +424,22 @@ li.slick-active::before {
    margin: 10px 9px;
    width: 300px;
    min-height: 440px;
-   border: #E8E8E8;
-   border-style: solid;
+   border: 2px solid #E8E8E8;
    padding: 20px 20px;
+   overflow: hidden;
+}
+
+.catalog__content {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
 }
 
 .catalog__item img {
    display: block;
    margin: 0 auto;
    max-width: 100%;
+   height: 200px;
 }
 
 .subheader__item {
@@ -440,7 +447,6 @@ li.slick-active::before {
    margin-top: 15px;
    text-align: center;
    font-size: 16px;
-   font-style: normal;
    font-weight: 700;
 }
 
@@ -449,22 +455,24 @@ li.slick-active::before {
    margin-top: 15px;
    text-align: center;
    font-size: 14px;
-   font-style: normal;
    font-weight: 400;
 }
 
 .catalog__item a {
-   display: block;
+   position: relative;
+   display: inline-block;
+   left: 50%;
+   transform: translateX(-50%);
    margin: 10px auto 0;
    color: #C70101;
    text-align: center;
    font-size: 14px;
-   font-style: normal;
    font-weight: 500;
    text-decoration-line: underline;
 }
 
 .catalog__item hr {
+   background-color: #e8e8e8;
    margin: 17px auto;
 }
 
@@ -477,7 +485,6 @@ li.slick-active::before {
 .item__old-price {
    color: #555;
    font-size: 14px;
-   font-style: normal;
    font-weight: 300;
    text-decoration: line-through;
 }
@@ -485,7 +492,6 @@ li.slick-active::before {
 .item__new-price {
    color: #050505;
    font-size: 20px;
-   font-style: normal;
    font-weight: 700;
 }
 
@@ -493,4 +499,65 @@ li.slick-active::before {
    width: 135px;
    height: 44px;
    color: #fff
+}
+
+.catalog-item__wrapper {
+   position: relative;
+   display: flex;
+   width: calc(200% + 40px);
+}
+
+.catalog-item__content {
+   width: 50%;
+   transform: translateX(-100%);
+   transition: 0.5s all;
+}
+
+.catalog-item__content-active {
+   margin-right: 20px;
+   transform: translateX(0%);
+
+}
+
+.catalog-item__info {
+   position: relative;
+   width: 50%;
+   margin-left: 20px;
+   padding-right: 15px;
+   padding-left: 10px;
+   margin-bottom: 0px;
+   transform: translateX(0%);
+   transition: 0.5s all;
+}
+
+.catalog-item__info-active {
+   margin-left: 0px;
+   transform: translateX(-100%);
+
+}
+
+.info-descr {
+   position: relative;
+   list-style-type: none;
+   color: #555;
+   font-size: 14px;
+   font-weight: 400;
+   margin-bottom: 5px;
+}
+
+.info-descr::before {
+   content: '';
+   position: absolute;
+   top: 9px;
+   left: -15px;
+   width: 5px;
+   height: 5px;
+   background-color: #C70101;
+}
+
+.catalog__item .link-back {
+   position: absolute;
+   bottom: 0px;
+   left: 50%;
+   transform: translateX(calc(-50% - 19px));
 }
