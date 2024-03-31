@@ -1,3 +1,7 @@
+* {
+   font-family: 'Museo Sans Cyrl', sans-serif;
+}
+
 .container {
    max-width: 1140px;
    margin: 0 auto;
@@ -564,4 +568,61 @@ li.slick-active::before {
 
 .catalog__dropmenu {
    display: none;
+}
+
+.subheader__reviews {
+   color: #0D0D0D;
+   text-align: center;
+   font-size: 30px;
+   font-weight: 700;
+   text-transform: uppercase;
+   margin-top: 80px;
+   margin-bottom: 60px;
+}
+
+.item__reviews {
+   display: flex;
+   align-items: flex-start;
+   margin-bottom: 60px;
+}
+
+.img__client {
+   margin-right: 60px;
+   width: 169px;
+}
+
+.name__client {
+   color: #0D0D0D;
+   font-size: 18px;
+   font-weight: 700;
+}
+
+.amount__maraphon {
+   color: #646464;
+   font-size: 14px;
+   font-weight: 500;
+}
+
+.review__text {
+   width: 680px;
+}
+
+.review__descr {
+   color: #0D0D0D;
+   font-size: 17px;
+   font-weight: 400;
+   margin-top: 10px;
+   line-height: 24px;
+   transition: 0.5s all;
+}
+
+.toggle__btn {
+   display: none;
+   margin-top: 10px;
+   border-radius: 25px;
+   font-size: 13px;
+   border: none;
+   background-color: #fff;
+   text-decoration-line: underline;
+
 }

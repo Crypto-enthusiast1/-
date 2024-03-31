@@ -104,7 +104,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
    sortCategory();
 
+   const btnShowFullReview = document.querySelectorAll('.toggle__btn');
 
+   function showFullReview() { //Развертывание и скрытие скрытого текста в отзыве
+      btnShowFullReview.forEach(function (button) {
+         button.addEventListener('click', function() {
+            const textContainer = this.previousElementSibling;
+
+            textContainer.classList.toggle('show');
+            this.textContent = textContainer.classList.contains('show') ? 'Свернуть' : 'Развернуть';
+         })
+      })
+   }
+
+   showFullReview();
 
 
 
