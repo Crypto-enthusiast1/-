@@ -54,17 +54,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
    showInfoHideInfo()
 
-   const allBtnOfCategory = document.querySelectorAll('.catalog__btn');
-   const runBtn = document.querySelector('.run__btn');
-   const fitnesBtn = document.querySelector('.fitnes__btn');
-   const triatlonBtn = document.querySelector('.triatlon__btn');
+   const allBtnOfCategory = document.querySelectorAll('.catalog__btn, .dropdown-item');
    const allCatalogItems = document.querySelectorAll('.catalog__item');
 
    function sortCategory() {
       for (let g = 0; g < allBtnOfCategory.length; g++) {
 
          allBtnOfCategory[g].addEventListener('click', (e) => {
-
+            console.log(e.target)
             for (let g = 0; g < allBtnOfCategory.length; g++) {//Меняем класс активности у кнопок категорий
                allBtnOfCategory[g].classList.remove('active-btn');
 
@@ -73,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
                }
             }
 
-            if (e.target.parentNode.classList.contains('run__btn')) {// Сортировка карточек по категории run
+            if (e.target.parentNode.classList.contains('run__btn') || e.target.classList.contains('run__btn')) {// Сортировка карточек по категории run
                for (let i = 0; i < allCatalogItems.length; i++) {
                   allCatalogItems[i].style.display = 'none';
                   if (allCatalogItems[i].getAttribute('data-category') === 'run') {
@@ -81,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
                   }
                }
 
-            } else if (e.target.parentNode.classList.contains('fitnes__btn')) {// Сортировка карточек по категории fitnes
+            } else if (e.target.parentNode.classList.contains('fitnes__btn') || e.target.classList.contains('fitnes__btn')) {// Сортировка карточек по категории fitnes
                for (let i = 0; i < allCatalogItems.length; i++) {
                   allCatalogItems[i].style.display = 'none';
                   if (allCatalogItems[i].getAttribute('data-category') === 'fitnes') {
@@ -89,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
                   }
                }
 
-            } else if (e.target.parentNode.classList.contains('triatlon__btn')) {// Сортировка карточек по категории triatlon
+            } else if (e.target.parentNode.classList.contains('triatlon__btn') || e.target.classList.contains('triatlon__btn')) {// Сортировка карточек по категории triatlon
                for (let i = 0; i < allCatalogItems.length; i++) {
                   allCatalogItems[i].style.display = 'none';
                   if (allCatalogItems[i].getAttribute('data-category') === 'triatlon') {

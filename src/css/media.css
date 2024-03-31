@@ -15,6 +15,10 @@
       object-fit: cover;
    }
 
+   .catalog {
+      padding: 0 20px 0 20px;
+   }
+
 }
 
 @media(max-width:767px) {
@@ -72,6 +76,14 @@
 
    .carousel__inner {
       width: 555px;
+   }
+
+   .catalog__btn {
+      font-size: 15px;
+   }
+
+   .all__btn {
+      font-size: 18px;
    }
 }
 
@@ -193,5 +205,42 @@
    li.slick-active::before {
       font-size: 30px;
       left: 15px;
+   }
+
+   .catalog__buttons {
+      display: none;
+   }
+
+   .catalog__dropmenu {
+      display: block;
+      text-align: center;
+   }
+
+   .btn-secondary {
+      --bs-btn-bg: #c70101;
+      --bs-btn-active-bg: #fff;
+      --bs-btn-active-color: #000;
+   }
+
+   .btn-secondary:hover {
+      background-color: initial;
+      color: initial;
+      border-color: initial;
+   }
+
+   .all__btn {
+      font-size: 22px;
+   }
+
+   .item__prices {
+      width: 50%
+   }
+
+   .item__buy {
+      width: 50%;
+   }
+
+   .item__new-price {
+      font-size: 18px;
    }
 }
