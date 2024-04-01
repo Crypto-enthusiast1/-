@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
                      allCatalogItems[i].style.display = 'block';
                   }
                }
-            } else if (e.target.parentNode.classList.contains('all__btn')) {// Показ карточек всех категорий
+            } else if (e.target.parentNode.classList.contains('all__btn') || e.target.classList.contains('all__btn')) {// Показ карточек всех категорий
                for (let i = 0; i < allCatalogItems.length; i++) {
                   allCatalogItems[i].style.display = 'block';
                }
@@ -106,9 +106,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
    const btnShowFullReview = document.querySelectorAll('.toggle__btn');
 
-   function showFullReview() { //Развертывание и скрытие скрытого текста в отзыве
+   function showFullReview() { //Развертывание и скрытие полного текста в отзыве
       btnShowFullReview.forEach(function (button) {
-         button.addEventListener('click', function() {
+         button.addEventListener('click', function () {
             const textContainer = this.previousElementSibling;
 
             textContainer.classList.toggle('show');
