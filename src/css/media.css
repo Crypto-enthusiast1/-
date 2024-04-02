@@ -36,6 +36,12 @@
       width: auto;
    }
 
+   .contacts {
+      width: 390px;
+      height: 245px;
+      padding: 25px 0 0 0;
+   }
+
 }
 
 @media(max-width:767px) {
@@ -105,6 +111,32 @@
 
    .review__text {
       width: auto;
+   }
+
+   .contacts {
+      width: 320px;
+      height: 190px;
+   }
+
+   .contacts__adress {
+      margin-bottom: 25px;
+      font-size: 18px;
+   }
+
+   .contacts__phone {
+      font-size: 18px;
+   }
+
+   .contacts__social {
+      margin-top: 25px;
+   }
+
+   footer {
+      height: 450px;
+   }
+
+   .google-map {
+      height: 450px;
    }
 }
 
@@ -277,4 +309,25 @@
    .toggle__btn {
       display: inline-block;
    }
+
+   .contacts {
+      width: 260px;
+      height: 170px;
+      opacity: 0.8;
+   }
+
+   .contacts__adress {
+      margin-bottom: 10px;
+      font-size: 14px;
+   }
+
+   .contacts__phone {
+      font-size: 14px;
+   }
+
+   .social__item {
+      width: 40px;
+      height: 40px;
+   }
+
 }
