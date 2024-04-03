@@ -25,7 +25,7 @@
             </div>
             <div class="header__contacts">
                <a href="tel:+74999228974" class="header__phone">+38 (097) 922-89-74</a>
-               <button class="button">заказать звонок</button>
+               <button data-button="consultation" class="button">заказать звонок</button>
             </div>
          </header>
          <div class="promo__wrapper">
@@ -45,7 +45,7 @@
                   Ответим на все вопросы
                </div>
             </div>
-            <button class="button button__main">заказать кОНСУЛЬТАЦИЮ</button>
+            <button data-button="consultation" class="button button__main">заказать кОНСУЛЬТАЦИЮ</button>
             <div class="promo__link">
                или
                <a href="#">ПЕРЕЙТИ В КАТАЛОГ</a>
@@ -90,7 +90,7 @@
             <input required name="name" type="text" placeholder="Ваше имя" autocomplete="on">
             <input required name="phone" type="number" placeholder="Номер телефона" autocomplete="on">
             <input required name="e-mail" type="email" placeholder="E-mail" autocomplete="on">
-            <button>заказать кОНСУЛЬТАЦИЮ</button>
+            <button data-button="consultation">заказать кОНСУЛЬТАЦИЮ</button>
          </form>
       </div>
    </section>
@@ -160,7 +160,7 @@
                      <div class="item__old-price">4 750 грн.</div>
                      <div class="item__new-price">4 500 грн.</div>
                   </div>
-                  <button class="button item__buy">КУПИТЬ</button>
+                  <button data-button="makeOrder" class="button item__buy">КУПИТЬ</button>
                </div>
             </div>
             <div data-category="run" class="catalog__item">
@@ -187,7 +187,7 @@
                      <div class="item__old-price">4 750 грн.</div>
                      <div class="item__new-price">4 500 грн.</div>
                   </div>
-                  <button class="button item__buy">КУПИТЬ</button>
+                  <button data-button="makeOrder" class="button item__buy">КУПИТЬ</button>
                </div>
             </div>
             <div data-category="fitnes" class="catalog__item">
@@ -214,7 +214,7 @@
                      <div class="item__old-price">4 750 грн.</div>
                      <div class="item__new-price">4 500 грн.</div>
                   </div>
-                  <button class="button item__buy">КУПИТЬ</button>
+                  <button data-button="makeOrder" class="button item__buy">КУПИТЬ</button>
                </div>
             </div>
             <div data-category="run" class="catalog__item">
@@ -241,7 +241,7 @@
                      <div class="item__old-price">4 750 грн.</div>
                      <div class="item__new-price">4 500 грн.</div>
                   </div>
-                  <button class="button item__buy">КУПИТЬ</button>
+                  <button data-button="makeOrder" class="button item__buy">КУПИТЬ</button>
                </div>
             </div>
             <div data-category="triatlon" class="catalog__item">
@@ -268,7 +268,7 @@
                      <div class="item__old-price">4 750 грн.</div>
                      <div class="item__new-price">4 500 грн.</div>
                   </div>
-                  <button class="button item__buy">КУПИТЬ</button>
+                  <button data-button="makeOrder" class="button item__buy">КУПИТЬ</button>
                </div>
             </div>
             <div data-category="fitnes" class="catalog__item">
@@ -295,7 +295,7 @@
                      <div class="item__old-price">4 750 грн.</div>
                      <div class="item__new-price">4 500 грн.</div>
                   </div>
-                  <button class="button item__buy">КУПИТЬ</button>
+                  <button data-button="makeOrder" class="button item__buy">КУПИТЬ</button>
                </div>
             </div>
             <div data-category="run" class="catalog__item">
@@ -322,7 +322,7 @@
                      <div class="item__old-price">4 750 грн.</div>
                      <div class="item__new-price">4 500 грн.</div>
                   </div>
-                  <button class="button item__buy">КУПИТЬ</button>
+                  <button data-button="makeOrder" class="button item__buy">КУПИТЬ</button>
                </div>
             </div>
             <div data-category="triatlon" class="catalog__item">
@@ -349,7 +349,7 @@
                      <div class="item__old-price">4 750 грн.</div>
                      <div class="item__new-price">4 500 грн.</div>
                   </div>
-                  <button class="button item__buy">КУПИТЬ</button>
+                  <button data-button="makeOrder" class="button item__buy">КУПИТЬ</button>
                </div>
             </div>
             <div data-category="triatlon" class="catalog__item">
@@ -376,7 +376,7 @@
                      <div class="item__old-price">4 750 грн.</div>
                      <div class="item__new-price">4 500 грн.</div>
                   </div>
-                  <button class="button item__buy">КУПИТЬ</button>
+                  <button data-button="makeOrder" class="button item__buy">КУПИТЬ</button>
                </div>
             </div>
          </div>
@@ -451,7 +451,38 @@
       </div>
    </footer>
 
+   <div class="overlay">
+      <div class="modal__overlay" id="consultation">
+         <div class="modal__close">&times;</div>
+         <div class="modal__subheader">Просто заполните форму заявки</div>
+         <div class="modal__descr">и мы перезвоним вам в течении 10 минут</div>
+         <form class="form-consultation" action="#">
+            <input required name="name" type="text" placeholder="Ваше имя" autocomplete="on">
+            <input required name="phone" type="number" placeholder="Номер телефона" autocomplete="on">
+            <input required name="e-mail" type="email" placeholder="E-mail" autocomplete="on">
+            <button class="modal__btn">заказать кОНСУЛЬТАЦИЮ</button>
+         </form>
+      </div>
 
+
+      <div class="modal__overlay" id="order">
+         <div class="modal__close">&times;</div>
+         <div class="modal__subheader">Ваш заказ:</div>
+         <div class="modal__descr">Пульсометр Polar FT1</div>
+         <form class="form-consultation" action="#">
+            <input required name="name" type="text" placeholder="Ваше имя" autocomplete="on">
+            <input required name="phone" type="number" placeholder="Номер телефона" autocomplete="on">
+            <input required name="e-mail" type="email" placeholder="E-mail" autocomplete="on">
+            <button class="modal__btn">КУПИТЬ</button>
+         </form>
+      </div>
+
+      <div class="modal__overlay" id="thanks">
+         <div class="modal__close">&times;</div>
+         <div class="modal__subheader">Спасибо за вашу заявку!</div>
+         <div class="modal__descr">Наш менеджер свяжется с вами в ближайшее время!</div>
+      </div>
+   </div>
    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
    <script src="js/slick.min.js"></script>

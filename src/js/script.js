@@ -119,6 +119,81 @@ document.addEventListener('DOMContentLoaded', function () {
 
    showFullReview();
 
+   //Modal
+
+   const btnConsultation = document.querySelectorAll("[data-button='consultation']");
+   const btnMakeOrder = document.querySelectorAll('[data-button="makeOrder"]');
+   const modalClose = document.querySelectorAll('.modal__close');
+   let scroll = calcScroll();
+
+   function calcScroll() {
+      let div = document.createElement('div');
+
+      div.style.width = '50px';
+      div.style.height = '50px';
+      div.style.overflowY = 'scroll';
+      div.style.visibility = 'hidden';
+
+      document.body.appendChild(div);
+
+      let scrollWidth = div.offsetWidth - div.clientWidth;
+      div.remove();
+
+      return scrollWidth;
+
+   }
+
+   btnConsultation.forEach((btn) => {
+      btn.addEventListener('click', () => {
+         document.querySelector('.overlay').style.display = 'block';
+         document.querySelector('#consultation').style.display = 'flex';
+         document.body.style.overflow = 'hidden';
+         document.body.style.marginRight = `${scroll}px`
+      })
+   });
+
+   modalClose.forEach(function (btnCls) {
+      btnCls.addEventListener('click', function () {
+         document.querySelector('.overlay').style.display = 'none';
+         this.parentNode.style.display = 'none';
+         document.body.style.overflow = '';
+         document.body.style.marginRight = `0px`
+      })
+   });
+
+   btnMakeOrder.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+         const subHeader = this.parentNode.parentNode.querySelector('.subheader__item').textContent;
+         document.querySelector('#order>.modal__descr').textContent = subHeader;
+         document.querySelector('.overlay').style.display = 'block';
+         document.querySelector('#order').style.display = 'flex';
+         document.body.style.overflow = 'hidden';
+         document.body.style.marginRight = `${scroll}px`
+      })
+   });
+
+   document.querySelector('.overlay').addEventListener('click', function (e) {
+      if (e.target.classList.contains('overlay')) {
+         this.style.display = 'none';
+         document.querySelectorAll('.modal__overlay').forEach((modal) => {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+            document.body.style.marginRight = `0px`
+         });
+      }
+   });
+
+   document.addEventListener('keydown', (e) => {
+      if (e.code === 'Escape') {
+         document.querySelector('.overlay').style.display = 'none';
+         document.querySelectorAll('.modal__overlay').forEach((modal) => {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+            document.body.style.marginRight = `0px`
+         });
+      }
+   });
+
 
 
 
