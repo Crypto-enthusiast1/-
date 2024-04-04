@@ -158,6 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
          this.parentNode.style.display = 'none';
          document.body.style.overflow = '';
          document.body.style.marginRight = `0px`
+         cleanInput()
       })
    });
 
@@ -179,6 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.style.display = 'none';
             document.body.style.overflow = '';
             document.body.style.marginRight = `0px`
+            cleanInput()
          });
       }
    });
@@ -190,14 +192,49 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.style.display = 'none';
             document.body.style.overflow = '';
             document.body.style.marginRight = `0px`
+            cleanInput()
          });
       }
    });
 
+   //Validate modal
 
+   function validateForm(selector) {
+      $(selector).validate({
+         rules: {
+            name: {
+               required: true,
+               minlength: 2
+            },
+            phone: "required",
+            email: {
+               required: true,
+               email: true
+            }
+         },
+         messages: {
+            name: {
+               required: "Укажите своё имя",
+               minlength: jQuery.validator.format("At least {0} characters required!")
+            },
+            phone: "Укажите ваш номер",
+            email: {
+               required: "Обязательно укажите вашу почту",
+               email: "Почта должа быть в таком формате name@domain.com"
+            }
+         }
+      });
+   }
 
+   validateForm('.form-consultation')
+   validateForm('#consultation form')
+   validateForm('#order form')
 
-
+   function cleanInput() {
+      document.querySelectorAll('form input').forEach((input) => {
+         input.value = '';
+      });
+   }
 
 
 
