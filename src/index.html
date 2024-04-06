@@ -8,6 +8,7 @@
    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
    <link rel="stylesheet" href="css/bootstrap.min.css">
    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/intlTelInput.min.css">
    <link rel="stylesheet" type="text/css" href="css/slick.css" />
    <link rel="stylesheet" href="css/media.css">
 </head>
@@ -88,9 +89,9 @@
          </div>
          <form class="form-consultation" action="#">
             <input required name="name" type="text" placeholder="Ваше имя" autocomplete="on">
-            <input required name="phone" type="number" placeholder="Номер телефона" autocomplete="on">
+            <input required name="phone" placeholder="Номер" autocomplete="on">
             <input required name="email" type="email" placeholder="E-mail" autocomplete="on">
-            <button data-button="consultation">заказать кОНСУЛЬТАЦИЮ</button>
+            <button class="consult__btn" data-button="consultation">заказать кОНСУЛЬТАЦИЮ</button>
          </form>
       </div>
    </section>
@@ -458,9 +459,9 @@
          <div class="modal__descr">и мы перезвоним вам в течении 10 минут</div>
          <form class="form-consultation" action="#">
             <input required name="name" type="text" placeholder="Ваше имя" autocomplete="on">
-            <input required name="phone" type="number" placeholder="Номер телефона" autocomplete="on">
+            <input required name="phone" placeholder="Номер телефона" autocomplete="on">
             <input required name="email" type="email" placeholder="E-mail" autocomplete="on">
-            <button class="modal__btn">заказать кОНСУЛЬТАЦИЮ</button>
+            <button class="modal__btn consult__btn">заказать кОНСУЛЬТАЦИЮ</button>
          </form>
       </div>
 
@@ -471,9 +472,9 @@
          <div class="modal__descr">Пульсометр Polar FT1</div>
          <form class="form-consultation" action="#">
             <input required name="name" type="text" placeholder="Ваше имя" autocomplete="on">
-            <input required name="phone" type="number" placeholder="Номер телефона" autocomplete="on">
+            <input required name="phone" placeholder="Номер телефона" autocomplete="on">
             <input required name="email" type="email" placeholder="E-mail" autocomplete="on">
-            <button class="modal__btn">КУПИТЬ</button>
+            <button class="modal__btn consult__btn">КУПИТЬ</button>
          </form>
       </div>
 
@@ -489,6 +490,7 @@
    <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
    <script src="js/jquery.validate.min.js"></script>
+   <script src="js/intlTelInput.min.js"></script>
    <script src="js/script.js"></script>
 </body>
 

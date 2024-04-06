@@ -235,6 +235,25 @@ document.addEventListener('DOMContentLoaded', function () {
          input.value = '';
       });
    }
+   // Check code country
+   const allInputs = document.getElementsByName('phone')
+
+   allInputs.forEach((input) => {
+      window.intlTelInput(input, {
+         utilsScript: "js/utils.js",
+         initialCountry: "auto",
+         geoIpLookup: function (success, failure) {
+            fetch("https://ipapi.co/json")
+               .then(function (res) { return res.json(); })
+               .then(function (data) { success(data.country_code); })
+               .catch(function () { failure(); });
+         },
+         ContainerClass: 'hello'
+
+      });
+   })
+
+
 
 
 
