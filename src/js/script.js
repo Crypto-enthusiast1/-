@@ -124,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
    const btnConsultation = document.querySelectorAll("[data-button='consultation']");
    const btnMakeOrder = document.querySelectorAll('[data-button="makeOrder"]');
    const modalClose = document.querySelectorAll('.modal__close');
+   const btnUp = document.querySelector('.pageup');
    let scroll = calcScroll();
 
    function calcScroll() {
@@ -149,6 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
          document.querySelector('#consultation').style.display = 'flex';
          document.body.style.overflow = 'hidden';
          document.body.style.marginRight = `${scroll}px`
+         btnUp.style.display = 'none';
       })
    });
 
@@ -158,6 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
          this.parentNode.style.display = 'none';
          document.body.style.overflow = '';
          document.body.style.marginRight = `0px`
+         btnUp.style.display = 'block';
          cleanInput()
       })
    });
@@ -170,6 +173,7 @@ document.addEventListener('DOMContentLoaded', function () {
          document.querySelector('#order').style.display = 'flex';
          document.body.style.overflow = 'hidden';
          document.body.style.marginRight = `${scroll}px`
+         btnUp.style.display = 'none';
       })
    });
 
@@ -180,6 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.style.display = 'none';
             document.body.style.overflow = '';
             document.body.style.marginRight = `0px`
+            btnUp.style.display = 'block';
             cleanInput()
          });
       }
@@ -192,6 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.style.display = 'none';
             document.body.style.overflow = '';
             document.body.style.marginRight = `0px`
+            btnUp.style.display = 'block';
             cleanInput()
          });
       }
@@ -226,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
    }
 
-   validateForm('.form-consultation')
+   validateForm('#consultation-form')
    validateForm('#consultation form')
    validateForm('#order form')
 
@@ -254,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function () {
    })
 
 
-   //Send data on server
+   // Send data on server
 
    $('form').submit(function (e) {
       e.preventDefault();
@@ -272,10 +278,89 @@ document.addEventListener('DOMContentLoaded', function () {
          $('#consultation, #order').fadeOut();
          $('.overlay, #thanks').fadeIn('slow');
          $('form').trigger('reset');
+         setTimeout(() => {
+            $('.overlay, #thanks').fadeOut();
+            document.body.style.overflow = '';
+            document.body.style.marginRight = `0px`
+            btnUp.style.display = 'block';
+         }, 4000);
       });
       return false
 
+
+   });
+
+   //Smooth scroll
+
+   $(window).scroll(function () {
+      if ($(this).scrollTop() > 1200) {
+         $('.pageup').fadeIn()
+      } else {
+         $('.pageup').fadeOut()
+      }
    })
 
+   //Первый вариант функции для прокрутки 
+
+   $(document).ready(function () {
+
+      $(".pageup").on('click', function (event) {
+
+         if (this.hash !== "") {
+            event.preventDefault();
+
+            const hash = this.hash;
+            $('html, body').animate({
+               scrollTop: $(hash).offset().top
+            }, 800, function () {
+
+               window.location.hash = hash;
+            });
+         }
+      });
+   });
+
+   //Второй вариант функции для прокрутки 
+
+   // $("a[href^='#']").click(function () {
+   //    const _href = $(this).attr("href");
+   //    $("html, body").animate({ scrollTop: $(_href).offset().top + "px" }, 600);
+   //    return false;
+   // });
+
+   //Третий вариант функции для прокрутки 
+
+   // let links = document.querySelectorAll('[href^="#"]'),
+   //    speed = 0.6;
+
+   // links.forEach(link => {
+   //    link.addEventListener('click', function (event) {
+   //       event.preventDefault();
+
+   //       let widthTop = document.documentElement.scrollTop,
+   //          hash = this.hash,
+   //          toBlock = document.querySelector(hash).getBoundingClientRect().top,
+   //          start = null;
+
+   //       requestAnimationFrame(step);
+
+   //       function step(time) {
+   //          if (start === null) {
+   //             start = time;
+   //          }
+
+   //          let progress = time - start,
+   //             r = (toBlock < 0 ? Math.max(widthTop - progress / speed, widthTop + toBlock) : Math.min(widthTop + progress / speed, widthTop + toBlock));
+
+   //          document.documentElement.scrollTo(0, r);
+
+   //          if (r != widthTop + toBlock) {
+   //             requestAnimationFrame(step);
+   //          } else {
+   //             location.hash = hash;
+   //          }
+   //       }
+   //    });
+   // });
 
 });

@@ -5,12 +5,16 @@
    --iti-path-globe-2x: url('../img/globe@2x.png');
 }
 
-.iti__tel-input{
+.iti__tel-input {
    width: 100%;
 }
 
 * {
    font-family: 'Museo Sans Cyrl', sans-serif;
+}
+
+html {
+   scroll-behavior: smooth;
 }
 
 .container {
@@ -515,7 +519,12 @@ li.slick-active::before {
 .item__buy {
    width: 135px;
    height: 44px;
-   color: #fff
+   color: #fff;
+   transition: all 0.3s;
+}
+
+.item__buy:hover {
+   transform: scale(1.1);
 }
 
 .catalog-item__wrapper {
@@ -762,4 +771,22 @@ footer {
 #order,
 #consultation {
    display: none;
+}
+
+.pageup {
+   display: none;
+   position: fixed;
+   bottom: 50px;
+   right: 50px;
+   width: 50px;
+   height: 50px;
+}
+
+.pageup img {
+   width: 100%;
+   border-radius: 100%;
+}
+
+.pageup img:hover {
+   box-shadow: 0px 0px 20px 3px #30d6c8;
 }
