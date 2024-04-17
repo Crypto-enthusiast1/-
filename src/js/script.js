@@ -320,9 +320,11 @@ document.addEventListener('DOMContentLoaded', function () {
       });
    });
 
+   new WOW().init();
+
    //Второй вариант функции для прокрутки 
 
-   // $("a[href^='#']").click(function () {
+   // $("a[href=#up]").click(function () {
    //    const _href = $(this).attr("href");
    //    $("html, body").animate({ scrollTop: $(_href).offset().top + "px" }, 600);
    //    return false;
